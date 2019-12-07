@@ -1,7 +1,7 @@
 def path_a_to_b(graph, start, end, n_orbits=0):
     for orbit in graph.get(start, []):
         if orbit == end:
-            return n_orbits
+            return n_orbits - 1
 
         following = path_a_to_b(
             {k: v for k, v in graph.items() if k != start},  # removes already used key/value
